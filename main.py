@@ -8,6 +8,18 @@ from material_store import (
     enregistrer_utilisation, get_tous_dossiers,
     get_dossier_materiau, get_stats_materiau, supprimer_dossier_materiau
 )
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ─────────────────────────────────────────────
 # CONFIG & STYLES

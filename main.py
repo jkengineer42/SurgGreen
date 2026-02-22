@@ -859,3 +859,9 @@ with tab_historique:
             if st.button(f"🗑️ Effacer l'historique de {choix}", type="secondary"):
                 supprimer_dossier_materiau(choix)
                 st.rerun()
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+    
